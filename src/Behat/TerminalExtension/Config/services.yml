@@ -1,0 +1,35 @@
+parameters:
+  terminal_extension.context.collection_initializer.class: Behat\TerminalExtension\Context\Initializer\CollectionAwareInitializer
+  terminal_extension.terminal.class: Behat\TerminalExtension\Terminal\TerminalInterface
+  terminal_extension.terminal.collection.class: Behat\TerminalExtension\Collection\CollectionInterface
+  terminal_extension.terminal.collection.factory.class: Behat\TerminalExtension\Collection\Factory
+
+  terminal_extension.terminal.factory.local.class: Behat\TerminalExtension\Terminals\Local\TerminalFactory
+
+services:
+  terminal_extension.terminal.collection.factory:
+    class: "%terminal_extension.terminal.collection.factory.class%"
+    arguments:
+      - "%terminal_extension.terminals%"
+
+  terminal_extension.terminal.collection:
+    class: "%terminal_extension.terminal.collection.class%"
+    factory: ["@terminal_extension.terminal.collection.factory", "createCollection"]
+
+  terminal_extension.context.collection_initializer:
+      class: "%terminal_extension.context.collection_initializer.class%"
+      arguments:
+        - "%terminal_extension.config.default_terminal_alias%"
+        - "@terminal_extension.terminal.collection"
+      tags:
+        -  { name: context.initializer }
+
+  terminal_extension.terminal.factory.local:
+      class: "%terminal_extension.terminal.factory.local.class%"
+      tags:
+        -  { name: terminal_extension.terminal_factory_tag }
+
+
+
+
+

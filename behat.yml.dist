@@ -1,0 +1,15 @@
+default:
+  autoload:
+    '': %paths.base%/src
+  suites:
+    default:
+      path: %paths.base%/features
+      contexts:
+        - Behat\TerminalExtension\Context\CollectionFeatureContext: ~
+  extensions:
+    Behat\TerminalExtension\ServiceContainer\Extension:
+      terminal_extension:
+        default_alias_terminal: local
+        terminals:
+          local:
+            type: local
