@@ -21,6 +21,9 @@
         "php": ">=5.4",
         "behat/behat": "~3.0,>=3.0.5"
     },
+    "suggest": {
+        "timitao/behatssh2terminalextension": "Add factory for ssh2 remote connection to terminal"
+    },
     "autoload": {
         "psr-4": {"": "src/"}
     }

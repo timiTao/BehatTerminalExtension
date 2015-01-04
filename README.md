@@ -34,7 +34,11 @@ or composer.json
 
 Configuration at [behat.yml.dist](https://github.com/timiTao/BehatTerminalExtension/blob/master/behat.yml.dist)
 
-Behat scenarion at this [base.feature](https://github.com/timiTao/BehatTerminalExtension/blob/master/features/base.feature)
+Behat scenario at this [base.feature](https://github.com/timiTao/BehatTerminalExtension/blob/master/features/base.feature)
+
+## Suggestion
+
+For remote terminals, use additional factory [Behat SSH2 Terminal](https://github.com/timiTao/BehatSSH2TerminalExtension).
 
 ## Versioning
 
