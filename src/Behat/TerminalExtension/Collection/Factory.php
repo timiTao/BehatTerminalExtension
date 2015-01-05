@@ -67,7 +67,7 @@ class Factory
      * @return TerminalFactoryInterface
      * @throws \Behat\TerminalExtension\Exception\Exception
      */
-    private function findSupportingFactory($type)
+    public function findSupportingFactory($type)
     {
         /** @var TerminalFactoryInterface $factory */
         foreach ($this->registeredFactories as $factory) {
