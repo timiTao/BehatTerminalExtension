@@ -13,3 +13,4 @@ default:
         terminals:
           local:
             type: local
+            working_directory: ~/

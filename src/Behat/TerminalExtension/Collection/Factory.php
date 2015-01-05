@@ -50,10 +50,12 @@ class Factory
         foreach ($this->terminalsConfiguration as $alias => $terminalConfiguration) {
             $type = $terminalConfiguration['type'];
             $options = $terminalConfiguration['options'];
+            $workingDirectory = isset($terminalConfiguration['working_directory']) ? $terminalConfiguration['working_directory'] : '';
 
             $factory = $this->findSupportingFactory($type);
 
             $terminal = $factory->factory($options);
+            $terminal->setWorkingDirectory($workingDirectory);
             $collection->set($alias, $terminal);
         }
 

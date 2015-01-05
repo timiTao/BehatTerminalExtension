@@ -94,6 +94,7 @@ class Extension implements ExtensionInterface
                     ->prototype('array')
                         ->children()
                             ->scalarNode('type')->end()
+                            ->scalarNode('working_directory')->end()
                             ->arrayNode('options')
                                 ->prototype('variable')
                                 ->end()
