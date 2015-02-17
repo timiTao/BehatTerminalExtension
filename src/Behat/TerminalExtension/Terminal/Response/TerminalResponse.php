@@ -38,6 +38,6 @@ class TerminalResponse implements TerminalResponseInterface
      */
     public function __toString()
     {
-        return $this->getResponseString();
+        return (string)$this->getResponseString();
     }
 }
